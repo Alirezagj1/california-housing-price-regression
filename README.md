@@ -1,5 +1,3 @@
-# California Housing Price Regression
-
 A neural network regression project built with PyTorch to predict median house values using the California Housing dataset.
 
 ## Project Overview
@@ -12,11 +10,11 @@ The project covers the main stages of a machine learning workflow, including dat
 
 The California Housing dataset is loaded using Scikit-learn.
 
-- Dataset: California Housing
-- Samples: 20,640
-- Features: 8 numerical features
-- Target: Median house value
-- Task: Supervised Regression
+- **Dataset:** California Housing
+- **Samples:** 20,640
+- **Features:** 8 numerical features
+- **Target:** Median house value
+- **Task:** Supervised Regression
 
 The target variable is measured in units of $100,000.
 
@@ -31,21 +29,22 @@ The target variable is measured in units of $100,000.
 
 ## Methodology
 
-1. Data Loading & Exploration
+### 1. Data Loading & Exploration
 
 - Loading the California Housing dataset.
 - Separating input features and target values.
 - Checking data types and dimensions.
 - Checking for missing, infinite, and invalid values.
 
-2. Data Preprocessing
+### 2. Data Preprocessing
 
 The dataset is divided into three subsets:
 
-Dataset| Percentage
-Training| 60%
-Validation| 20%
-Testing| 20%
+| Dataset    | Percentage |
+|------------|------------|
+| Training   | 60%        |
+| Validation | 20%        |
+| Testing    | 20%        |
 
 Min-Max normalization is applied to both input features and target values.
 
@@ -53,33 +52,35 @@ To prevent data leakage, the scalers are fitted only on the training data. The s
 
 The processed data is converted into PyTorch tensors for model training.
 
-3. Model Architecture
+### 3. Model Architecture
 
-A fully connected neural network is implemented using PyTorch's "nn.Sequential".
+A fully connected neural network is implemented using PyTorch's `nn.Sequential`.
 
-Layer| Neurons| Activation
-Input| 8| -
-Hidden Layer 1| 24| ReLU
-Hidden Layer 2| 12| ReLU
-Hidden Layer 3| 6| ReLU
-Output| 1| Linear
+| Layer          | Neurons | Activation |
+|----------------|---------|------------|
+| Input          | 8       | -          |
+| Hidden Layer 1 | 24      | ReLU       |
+| Hidden Layer 2 | 12      | ReLU       |
+| Hidden Layer 3 | 6       | ReLU       |
+| Output         | 1       | Linear     |
 
-4. Model Training
+### 4. Model Training
 
 The model is trained using the following configuration:
 
-Parameter| Value
-Optimizer| Adam
-Loss Function| MSE
-Learning Rate| 0.001
-Epochs| 100
-Batch Size| 32
+| Parameter      | Value |
+|----------------|-------|
+| Optimizer      | Adam  |
+| Loss Function  | MSE   |
+| Learning Rate  | 0.001 |
+| Epochs         | 100   |
+| Batch Size     | 32    |
 
 Training and validation losses are monitored throughout the training process.
 
 The model weights with the lowest validation loss are saved and restored for final evaluation.
 
-5. Model Evaluation
+### 5. Model Evaluation
 
 The final model is evaluated on the unseen test dataset.
 
@@ -87,19 +88,19 @@ The predictions are converted back to the original target scale before calculati
 
 The following metrics are used:
 
-- MAE: Mean Absolute Error
-- MSE: Mean Squared Error
-- RMSE: Root Mean Squared Error
-- R²: Coefficient of Determination
+- **MAE:** Mean Absolute Error
+- **MSE:** Mean Squared Error
+- **RMSE:** Root Mean Squared Error
+- **R²:** Coefficient of Determination
 
 ## Results
 
-Test Set Performance
+### Test Set Performance
 
-- MAE : 0.4218
-- MSE : 0.4021
-- RMSE : 0.6341
-- R² Score : 0.7067
+- **MAE:** 0.4218
+- **MSE:** 0.4021
+- **RMSE:** 0.6341
+- **R² Score:** 0.7067
 
 The model achieves an R² score of approximately 0.71, explaining around 70.67% of the variance in the test target values.
 
@@ -115,32 +116,20 @@ The notebook includes the following visualizations:
 - Training and validation loss curves.
 - Actual vs. predicted house values.
 
-Installation & Usage
+## Installation & Usage
 
-1. Clone the Repository
+### 1. Clone the Repository
 
-git clone [Link](https://github.com/Alirezagj1/california-housing-price-regression.git)
-
-2. Navigate to the Project Directory
-
+```bash
+git clone https://github.com/Alirezagj1/california-housing-price-regression.git
 cd california-housing-price-regression
-
-3. Install Dependencies
-
 pip install -r requirements.txt
-
-4. Run the Notebook
-
-jupyter notebook
-
-Open the following notebook:
-
-"notebooks/house_price_regression.ipynb"
-
-Run the cells sequentially to reproduce the workflow.
-
+```
 ## Author
-Alireza Gorji 
+
+**Name:** Alireza Gorji
+
 M.Sc. Student in E-commerce | Machine Learning Enthusiast
 
-Developed as a machine learning regression project using Python and PyTorch.
+- **Project Type:** Machine Learning / Regression
+- **Framework:** PyTorch
